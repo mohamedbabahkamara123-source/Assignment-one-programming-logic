@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PROG ASS !"/>
+        <attribute name="authors" value="junior"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-23 09:50:10 AM"/>
+        <attribute name="created" value="anVuaW9yO0RFU0tUT1AtSU5BQ0c0STsyMDI2LTEwLTIzOzA5OjI2OjUwIEFNOzI5OTI="/>
+        <attribute name="edited" value="anVuaW9yO0RFU0tUT1AtSU5BQ0c0STsyMDI2LTEwLTIzOzA5OjUwOjEwIEFNOzE7MzA5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="residentName, location, wasteDescription, reportStatus, pending, assignedTeam, collectionTeam" type="String" array="False" size=""/>
+            <declare name="reportID, reportCount, maxlenght, i" type="Integer" array="False" size=""/>
+            <declare name="isValid" type="Boolean" array="False" size=""/>
+            <output expression="&quot;Welcome To The Smart Waste System&quot;" newline="True"/>
+            <output expression="&quot; Enter Resident Name&quot;" newline="True"/>
+            <input variable="residentName"/>
+            <output expression="&quot;Enter Location&quot;" newline="True"/>
+            <input variable="location"/>
+            <output expression="&quot;Describe Waste&quot;" newline="True"/>
+            <input variable="wasteDescription"/>
+            <assign variable="isValid" expression="(residentName != &quot;&quot; AND location != &quot;&quot; AND wasteDescription != &quot;&quot;)"/>
+            <if expression="isValid = True">
+                <then>
+                    <output expression="&quot; Create A unique Report ID&quot;" newline="True"/>
+                    <input variable="reportID"/>
+                    <assign variable="reportStatus" expression="&quot;pending&quot;"/>
+                    <output expression="&quot;Report Saved Successfully......&quot;" newline="True"/>
+                    <assign variable="assignedTeam" expression="&quot;collectionTeam&quot;"/>
+                    <output expression="&quot;Report ID&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Go Back invalid Entry&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
