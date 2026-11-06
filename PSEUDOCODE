@@ -1,0 +1,38 @@
+BEGIN
+    DECLARE residentName AS STRING
+    DECLARE location AS STRING
+    DECLARE wasteDescription AS STRING
+    DECLARE reportID AS STRING
+    DECLARE reportStatus AS STRING
+    DECLARE assignedTeam AS STRING
+    DECLARE isValid AS BOOLEAN
+ 
+    isValid = FALSE
+    OUTPUT "Welcome to the Smart Waste System"
+ 
+    WHILE isValid = FALSE
+        OUTPUT "Enter resident name:"
+        INPUT residentName
+        OUTPUT "Enter location:"
+        INPUT location
+        OUTPUT "Describe waste problem:"
+        INPUT wasteDescription
+ 
+        isValid = (residentName != "" AND
+                   location != "" AND
+                   wasteDescription != "")
+ 
+        IF isValid = FALSE THEN
+            OUTPUT "Invalid entry. Complete all required fields."
+        END IF
+    END WHILE
+ 
+    reportID = GenerateUniqueReportID()
+    reportStatus = "Pending"
+    assignedTeam = "Collection Team"
+ 
+    OUTPUT "Report saved successfully"
+    OUTPUT "Report ID: " + reportID
+    OUTPUT "Report Status: " + reportStatus
+    OUTPUT "Assigned Team: " + assignedTeam
+END
